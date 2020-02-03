@@ -1,0 +1,59 @@
+﻿@model Nop.Plugin.Widgets.SegmentAnalytics.Models.ConfigurationModel
+@{
+    Layout = "_ConfigurePlugin";
+}
+
+@await Component.InvokeAsync("StoreScopeConfiguration")
+
+
+<form asp-controller="WidgetsSegmentAnalytics" asp-action="Configure" method="post">
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                @T("Plugins.Widgets.SegmentAnalytics.Instructions")
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <nop-override-store-checkbox asp-for="SegmentId_OverrideForStore" asp-input="SegmentId" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                        <nop-label asp-for="SegmentId" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-editor asp-for="SegmentId" />
+                        <span asp-validation-for="SegmentId"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <nop-override-store-checkbox asp-for="TrackingScript_OverrideForStore" asp-input="TrackingScript" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                        <nop-label asp-for="TrackingScript" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-textarea asp-for="TrackingScript" />
+                        <span asp-validation-for="TrackingScript"></span>
+                    </div>
+                </div>
+                <div class="form-group" id="pnlIncludingTax">
+                    <div class="col-md-3">
+                        <nop-override-store-checkbox asp-for="IncludingTax_OverrideForStore" asp-input="IncludingTax" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                        <nop-label asp-for="IncludingTax" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-editor asp-for="IncludingTax" />
+                        <span asp-validation-for="IncludingTax"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        &nbsp;
+                    </div>
+                    <div class="col-md-9">
+                        <input type="submit" name="save" class="btn bg-blue" value="@T("Admin.Common.Save")" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

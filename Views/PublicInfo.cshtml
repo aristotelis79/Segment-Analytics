@@ -1,0 +1,9 @@
+﻿@model string
+@if (Model != null && Model.StartsWith("<script"))
+{
+    @Html.Raw(Model)
+}
+else if (Model != null)
+{
+    @Html.Raw($"<script>{@Model}</script>");
+}

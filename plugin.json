@@ -1,0 +1,11 @@
+﻿{
+  "Group": "Widgets",
+  "FriendlyName": "Segment Analytics",
+  "SystemName": "Widgets.SegmentAnalytics",
+  "Version": "1.00",
+  "SupportedVersions": [ "4.10" ],
+  "Author": "Aristotelis Papantonis",
+  "DisplayOrder": 1,
+  "FileName": "Nop.Plugin.Widgets.SegmentAnalytics.dll",
+  "Description": "Segment Analytics"
+}
